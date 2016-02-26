@@ -61,6 +61,7 @@ jspm_packages
 *.jpg
 
 ### Jekyll ###
+serve/
 _site/
 .sass-cache/
 .jekyll-metadata
