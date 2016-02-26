@@ -1,0 +1,103 @@
+section.jobs {
+	height: 650px;
+	position: relative;
+}
+
+#bride {
+	width: 90px;
+}
+
+#shoe,
+#camera {
+	width: 150px;
+}
+
+div.icon-wrapper {
+	margin: 10px auto;
+	display: flex;
+	justify-content: space-between;
+	max-width: 960px;
+}
+
+section.jobs div.shoe,
+div.camera,
+div.bride {
+	text-align: center;
+	display: inline-block;
+	max-width: 300px;
+}
+
+section.jobs .arrow-2 {
+	display: block;
+	transform: rotateZ(-90deg);
+	width: 30px;
+	margin: 0 auto;
+	cursor: pointer;
+	transition: all .3s;
+}
+
+section.jobs .arrow-2:hover {
+	transform: rotateZ(-90deg) scale(1.2);
+}
+
+section.jobs .arrow-2:hover polyline {
+	fill: #000;
+}
+
+section.jobs .arrow-2 polyline {
+	stroke: #000;
+}
+
+section.jobs ul.description {
+	margin: 0 auto;
+	max-width: 960px;
+	padding-bottom: 10%;
+	position: relative;
+	overflow: hidden;
+}
+
+ul.description li {
+	position: absolute;
+	top: 0;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 3px 10px rgba(0,0,0,.8);
+	opacity: 0;
+	transform: rotateX(90deg);
+	transition: all .4s;
+	pointer-events: none;
+}
+
+ul.description p {
+	color: #000;
+	font-size: 22px;
+	text-transform: initial;
+	font-weight: 400;
+	padding: 30px;
+	margin: 0 auto;
+	max-width: 70%;
+}
+
+ul.description p::first-line {
+	font-weight: 700;
+}
+
+ul.description .selected-description {
+	opacity: 1;
+	transform: rotateX(0deg);
+	top: 5%;
+}
+
+div.borders {
+	position: absolute;
+	top: 0;
+	left: 15%;
+	right: 15%;
+	/*width: 50%;*/
+	height: 650px;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+}

@@ -1,0 +1,321 @@
+li.gallery {
+	background-color: #ddd;
+	width: 100%;
+	height: 100%;
+}
+
+li.gallery ul.wedding-images {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+
+li.gallery ul.wedding-images li {
+	display: none;
+	margin-top: 25px;
+	height: 95%;
+	z-index: 1;
+	box-shadow: 0 0 20px rgba(0,0,0,.8);
+	border: 2px solid white;
+	pointer-events: none;
+}
+
+li.gallery ul.wedding-images li img {
+	height: 100%;
+}
+
+li.gallery ul.wedding-images .visible-image {
+	display: block;
+	z-index: 2;
+}
+
+li.gallery div.backward,
+li.gallery div.gallery-nav-hover-back,
+li.gallery div.forward,
+li.gallery div.gallery-nav-hover-forward {
+	position: fixed;
+	top: 0;
+	height: 100%;
+	transition: all .3s ease-in-out;
+}
+
+li.gallery div.gallery-nav-hover-back,
+li.gallery div.gallery-nav-hover-forward {
+	width: 600px;
+	z-index: 3;
+}
+
+li.gallery div.backward,
+li.gallery div.forward {
+	width: 100px;
+	z-index: 4;
+	background-color: rgba(0,0,0,.6);
+	cursor: pointer;
+}
+
+/* --- left side --- */
+
+li.gallery div.backward {
+	left: -100px;
+}
+
+div.gallery-nav-hover-back {
+	left: 0px;
+}
+
+div.gallery-nav-hover-back:hover + div.backward,
+li.gallery div.backward:hover {
+	left: 0px;
+}
+
+/* --- right side --- */
+
+li.gallery div.forward {
+	right: -100px;
+}
+
+div.gallery-nav-hover-forward {
+	right: 0px;
+}
+
+div.gallery-nav-hover-forward:hover + div.forward,
+li.gallery div.forward:hover {
+	right: 0px;
+}
+
+/* --- back button --- */
+
+li.gallery div.back-button,
+li.gallery div.back-button-hover {
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	left: 0;
+	z-index: 4;
+	transition: all .3s ease-in-out;
+}
+
+li.gallery div.back-button {
+	background-color: rgba(0,0,0,.6);
+	cursor: pointer;
+	top: -70px;
+	line-height: 70px;
+	font-size: 18px;
+	color: white;
+	text-align: center;
+	letter-spacing: 15px;
+}
+
+li.gallery div.back-button div.back-button-sign {
+	width: 230px;
+	height: 15px;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 0 0 15px 15px;
+	margin: -3px auto 0;
+}
+
+li.gallery div.back-button p span {
+	font-size: 25px;
+}
+
+li.gallery div.back-button-hover {
+	top: 0;
+}
+
+div.back-button-hover:hover + div.back-button,
+li.gallery div.back-button:hover {
+	top: 0;
+}
+
+/* --- arrow --- */
+
+li.gallery div.backward svg.arrow,
+li.gallery div.forward svg.arrow {
+	position: fixed;
+	top: 50%;
+	margin-top: -47px;
+	padding: 0 35px;
+	width: 30px;
+}
+
+li.gallery div.backward svg.arrow polyline,
+li.gallery div.forward svg.arrow polyline {
+	fill: white;
+}
+
+li.gallery div.forward svg.arrow {
+	transform: rotate(180deg);
+}
+
+/* --- nav-dots --- */
+
+li.gallery div.nav-dots {
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	bottom: 10px;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+}
+
+li.gallery div.nav-dots span {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	border: 3px solid white;
+	box-shadow: 0 0 10px rgba(0,0,0,.8);
+	margin: 0 15px;
+	cursor: pointer;
+}
+
+li.gallery div.nav-dots span.top-image {
+	background-color: white;
+}
+
+/* --- animations --- */
+
+.go-back {
+  animation-name: bounceInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.bounceOutLeft {
+  animation-name: bounceOutLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.go-forward {
+  animation-name: bounceInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.bounceOutRight {
+  animation-name: bounceOutRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceOutLeft {
+  20% {
+    opacity: 1;
+    transform: translate3d(20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0);
+  }
+}
+
+@keyframes bounceOutRight {
+  20% {
+    opacity: 1;
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0);
+  }
+}

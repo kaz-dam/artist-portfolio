@@ -1,0 +1,77 @@
+section.about {
+	text-align: center;
+	margin-top: 730px;
+	background-color: white;
+	padding-bottom: 20px;
+}
+
+section.about p {
+	text-align: justify;
+	text-transform: none;
+	letter-spacing: 1px;
+	max-width: 960px;
+	margin: 55px auto;
+}
+
+section.about p a {
+	color: #000;
+	text-decoration: none;
+}
+
+section.about p span.brands {
+	display: inline-block;
+}
+
+section.about p span.popup {
+	display: none;
+	position: absolute;
+	background-color: #000;
+	border-radius: 5px;
+	box-shadow: 0 0 15px rgba(0,0,0,.7);
+	top: 0;
+	left: 0;
+}
+
+section.about p span.popup svg {
+	width: 300px;
+	fill: white;
+}
+
+section.about img {
+	border-radius: 50%;
+	box-shadow: 0 0 18px rgba(0,0,0,.5);
+}
+
+.brand-anim {
+	animation-name: tada;
+	animation-duration: 1s;
+  	animation-fill-mode: both;
+}
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    transform: scale3d(.85, .85, .85) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.15, 1.15, 1.15) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale3d(1.15, 1.15, 1.15) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+	section.about {
+		clear: both;
+	}
+}

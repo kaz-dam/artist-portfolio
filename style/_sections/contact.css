@@ -1,0 +1,53 @@
+section.contact {
+	position: fixed;
+	bottom: 50px;
+	z-index: -1;
+}
+
+.hide-on-top {
+	display: none;
+}
+
+.show-on-scroll {
+	display: block;
+}
+
+section.contact h1 {
+	text-align: center;
+	padding: 55px;
+}
+
+section.contact div.social {
+	max-width: 470px;
+	margin: 0 auto;
+}
+
+div.social svg {
+	margin-bottom: 115px;
+	cursor: pointer;
+	border-radius: 50%;
+	transition: all .2s;
+}
+
+#email,
+#face {
+	margin-right: 93px;
+}
+
+#email:hover,
+#face:hover,
+#insta:hover {
+	transform: scale(1.1);
+}
+
+#email:hover {
+	fill: #d14836;
+}
+
+#face:hover {
+	fill: #3a5795;
+}
+
+#insta:hover {
+	fill: #125688;
+}

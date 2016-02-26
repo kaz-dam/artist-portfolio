@@ -1,0 +1,19 @@
+@import "general.css";
+
+@import "_sections/header.css";
+
+@import "_sections/about.css";
+
+@import "_sections/jobs.css";
+
+@import "_sections/references.css";
+
+@import "_sections/contact.css";
+
+@import "_sections/footer.css";
+
+@import "_modules/scroll-menu.css";
+
+@import "_modules/slider.css";
+
+@import "_modules/gallery.css";

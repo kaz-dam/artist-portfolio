@@ -1,0 +1,56 @@
+div.slider-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+ul.slider > li {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	display: none;
+}
+
+ul.slider li.visible {
+	position: absolute;
+	z-index: 2;
+	display: initial;
+}
+
+div.svg-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div.svg-cover svg {
+	width: 100%;
+	height: 100%;
+}
+
+div.svg-cover svg path {
+	fill: #ccc;
+}
+
+div.svg-cover.is-animating {
+	z-index: 4;
+	opacity: 1;
+	transition: opacity .6s;
+}
+
+div.scroll-pos {
+	background-color: #ddd;
+	color: #000;
+	position: fixed;
+	top: 180px;
+	right: 0;
+	width: 80px;
+	height: 20px;
+	font-size: 15px;
+}

@@ -1,0 +1,87 @@
+section.references {
+	height: 890px;
+	background-color: white;
+	margin-bottom: 415px;
+	box-shadow: 0 3px 25px rgba(0,0,0,.6);
+}
+
+section.references h1 {
+	text-align: center;
+}
+
+div.margin {
+	width: 100%;
+	opacity: 0;
+}
+
+/*
+
+--- gallery ---
+
+*/
+
+section.references div.slider-nav {
+	max-width: 664px;
+	margin: 0 auto;
+}
+
+div.slider-nav div.images {
+	box-shadow: 0 0 20px rgba(0,0,0,.5);
+	display: inline-block;
+	margin: 15px;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+div.slider-nav div.gallery,
+div.slider-nav div.images {
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+	border-radius: 5px;
+}
+
+div.slider-nav div.images div.gallery {
+	position: absolute;
+	background-color: rgba(0,0,0,.6);
+	transform: rotateX(90deg);
+}
+
+div.slider-nav div.images:hover div.gallery {
+	transform: rotateX(0deg);
+}
+
+div.slider-nav div.gallery,
+div.slider-nav div.images:nth-of-type(1) {
+	width: 300px;
+	height: 300px;
+}
+
+div.slider-nav div.images:nth-of-type(2) {
+	width: 300px;
+	height: 300px;
+}
+
+div.slider-nav div.images:nth-of-type(3) {
+	width: 300px;
+	height: 300px;
+}
+
+div.slider-nav div.images:nth-of-type(4) {
+	width: 300px;
+	height: 300px;
+}
+
+div.images div.gallery h2 {
+	color: #fff;
+	font-size: 15px;
+	letter-spacing: 10px;
+	margin: 10px 10px;
+	border-bottom: 1px solid #fff;
+	opacity: 0;
+}
+
+div.slider-nav h2 span {
+	font-size: 23px;
+}
