@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="hu">
+
+  {% include head.html %}
+
+<body>
+  <div class="slider-wrapper">
+    <ul class="slider">
+      <li class="visible">
+    
+        {{ content }}
+
+        <div class="scroll-menu">
+          {% include icons/arrow.svg %}
+
+          <ul class="side-menu">
+            <li><a href="#header"><span>T</span>op</a></li>
+            <li><a href="#about"><span>R</span>ólam</a></li>
+            <li><a href="#jobs"><span>M</span>unkák</a></li>
+            <li><a href="#references"><span>R</span>eferenciák</a></li>
+            <li><a href="#contact"><span>K</span>apcsolat</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="gallery" id="gallery-rendered">
+        {% include gallery.html %}<!-- **** one list item is enough to load the different galleries dynamically **** -->
+      </li>
+
+    </ul>
+    {% include tools/svg-cover.html %}
+</div>
+
+
+<!--<script src="assets/javascript/vendor/jquery.custom.js"></script>
+<script src="assets/javascript/vendor/snap.svg.js"></script>
+<script src="assets/javascript/tools/slow-scroll.js"></script>
+<script src="assets/javascript/functions/mainObj.js"></script>
+<script src="assets/javascript/functions/construct.js"></script>-->
+<!-- build:js assets/javascript/main.js -->
+<script src="assets/javascript/bundle.js"></script>
+<!-- endbuild -->
+</body>
+</html>
