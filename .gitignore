@@ -59,3 +59,8 @@ jspm_packages
 
 # Personal images
 *.jpg
+
+### Jekyll ###
+_site/
+.sass-cache/
+.jekyll-metadata
