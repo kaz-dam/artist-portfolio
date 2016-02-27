@@ -125,12 +125,10 @@ gulp.task("jshint", function () {
 });
 
 //Loading jQuery
-gulp.task("jquery", function() {
-  $.jquery.src({
-    release: 2,
-    flags: ['-deprecated', '-event/alias', '-ajax/script', '-ajax/jsonp', '-exports/global']
-    })
-  .pipe(gulp.dest('src/assets/javascript/vendor/'));
+gulp.task("vendor", function() {
+  gulp.src('./src/assets/javascript/vendor/*.js')
+      .pipe($.uglify())
+      .pipe(gulp.dest('./serve/assets/javascript/vendor/'));
 });
 
 gulp.task("js", function() {
