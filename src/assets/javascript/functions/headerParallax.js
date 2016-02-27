@@ -1,5 +1,6 @@
+var makeup = require('./Makeup');
+
 module.exports = function headerParallax() {
-	//var makeup = require('./Makeup');
 
 	//headerParallax = function() {
 			var self = this;

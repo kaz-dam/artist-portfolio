@@ -46,19 +46,21 @@ module.exports =
 		};*/
 	}
 },{}],2:[function(require,module,exports){
-module.exports = function construct(text) {
-	//var makeup = require('./Makeup');
+var makeup = require('./Makeup');
 
-	//return console.log(makeup);
-	/*makeup.prototype.construct = function() {
-	};*/
+var Makeup = new makeup();
 
-	console.log(text);
+Makeup.prototype = {
+	construct: function(text) {
+		console.log(text);
+	}
+}
 
-};
-},{}],3:[function(require,module,exports){
+module.exports = Makeup.construct();
+},{"./Makeup":1}],3:[function(require,module,exports){
+var makeup = require('./Makeup');
+
 module.exports = function headerParallax() {
-	//var makeup = require('./Makeup');
 
 	//headerParallax = function() {
 			var self = this;
@@ -86,7 +88,7 @@ module.exports = function headerParallax() {
 			});
 	//}
 };
-},{}],4:[function(require,module,exports){
+},{"./Makeup":1}],4:[function(require,module,exports){
 var Makeup = require('./functions/Makeup');
 var construct = require('./functions/construct');
 var headerParallax = require('./functions/headerParallax');
@@ -94,12 +96,12 @@ var headerParallax = require('./functions/headerParallax');
 
 var makeup = new Makeup();
 
-makeup.prototype = {
+/*makeup.prototype = {
 	construct: construct,
 	headerParallax: headerParallax
-}
+}*/
 
-makeup.construct('hello world');
+//makeup.construct('hello world');
 
-//console.log(makeup);
+console.log(makeup);
 },{"./functions/Makeup":1,"./functions/construct":2,"./functions/headerParallax":3}]},{},[4]);
