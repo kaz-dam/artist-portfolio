@@ -5,11 +5,11 @@ var headerParallax = require('./functions/headerParallax');
 
 var makeup = new Makeup();
 
-/*makeup.prototype = {
+makeup.prototype = {
 	construct: construct,
 	headerParallax: headerParallax
-}*/
+}
 
-//makeup.construct('hello world');
+construct(makeup.slider);
 
 console.log(makeup);

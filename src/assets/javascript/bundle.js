@@ -4,7 +4,7 @@ module.exports =
 	function Makeup() {
 		var self = this;
 
-		self.slider = {};
+		self.slider = 'heeey';
 		self.sliderNavigation = {};
 		self.sliderBack = {};
 		self.svgCoverLayer = {};
@@ -46,24 +46,23 @@ module.exports =
 		};*/
 	}
 },{}],2:[function(require,module,exports){
-var makeup = require('./Makeup');
+//var makeup = require('./Makeup');
 
-var Makeup = new makeup();
 
-Makeup.prototype = {
-	construct: function(text) {
+/*Makeup.prototype.construct = function(text) {
 		console.log(text);
-	}
+}*/
+
+module.exports = function construct(text) {
+	console.log(text);
+	headerParallax();
 }
-
-module.exports = Makeup.construct();
-},{"./Makeup":1}],3:[function(require,module,exports){
-var makeup = require('./Makeup');
-
+},{}],3:[function(require,module,exports){
 module.exports = function headerParallax() {
 
+	console.log('from header');
 	//headerParallax = function() {
-			var self = this;
+			/*var self = this;
 
 			self.config.windowObj.on('scroll', function() {
 				var topPos = self.config.windowObj.scrollTop();
@@ -85,23 +84,23 @@ module.exports = function headerParallax() {
 					'opacity': 1 - ( topPos / 300 ),
 					'margin-top': 15 - (topPos / 13)
 				});
-			});
+			});*/
 	//}
 };
-},{"./Makeup":1}],4:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var Makeup = require('./functions/Makeup');
 var construct = require('./functions/construct');
 var headerParallax = require('./functions/headerParallax');
 
 
-var makeup = new Makeup();
+//var makeup = new Makeup();
 
-/*makeup.prototype = {
+Makeup.prototype = {
 	construct: construct,
 	headerParallax: headerParallax
-}*/
+}
 
-//makeup.construct('hello world');
+construct(Makeup.slider);
 
 console.log(makeup);
 },{"./functions/Makeup":1,"./functions/construct":2,"./functions/headerParallax":3}]},{},[4]);

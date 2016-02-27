@@ -3,7 +3,7 @@ module.exports =
 	function Makeup() {
 		var self = this;
 
-		self.slider = {};
+		self.slider = 'heeey';
 		self.sliderNavigation = {};
 		self.sliderBack = {};
 		self.svgCoverLayer = {};

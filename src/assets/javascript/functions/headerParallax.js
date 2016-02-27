@@ -1,9 +1,8 @@
-var makeup = require('./Makeup');
-
 module.exports = function headerParallax() {
 
+	console.log('from header');
 	//headerParallax = function() {
-			var self = this;
+			/*var self = this;
 
 			self.config.windowObj.on('scroll', function() {
 				var topPos = self.config.windowObj.scrollTop();
@@ -25,6 +24,6 @@ module.exports = function headerParallax() {
 					'opacity': 1 - ( topPos / 300 ),
 					'margin-top': 15 - (topPos / 13)
 				});
-			});
+			});*/
 	//}
 };
