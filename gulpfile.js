@@ -118,7 +118,7 @@ gulp.task("html", ["styles"], function () {
 
 // Run JS Lint against your JS
 gulp.task("jshint", function () {
-  gulp.src("./serve/assets/javascript/*.js")
+  return gulp.src("./serve/assets/javascript/*.js")
     // Checks your JS code quality against your .jshintrc file
     .pipe($.jshint(".jshintrc"))
     .pipe($.jshint.reporter());
@@ -126,7 +126,7 @@ gulp.task("jshint", function () {
 
 //Loading jQuery
 gulp.task("vendor", function() {
-  gulp.src('./src/assets/javascript/vendor/*.js')
+  return gulp.src('./src/assets/javascript/vendor/*.js')
       .pipe($.uglify())
       .pipe(gulp.dest('./serve/assets/javascript/vendor/'));
 });
