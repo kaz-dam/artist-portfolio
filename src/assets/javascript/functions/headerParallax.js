@@ -1,4 +1,6 @@
-module.exports = function headerParallax() {
+var makeup = require('./Makeup');
+
+makeup.prototype.headerParallax = function() {
 
 	console.log('from header');
 	//headerParallax = function() {
@@ -27,3 +29,5 @@ module.exports = function headerParallax() {
 			});*/
 	//}
 };
+
+module.exports = makeup;

@@ -15,6 +15,8 @@ module.exports =
 		self.selectedGallery = {};
 		self.positionBeforeGallery = {};
 
+		console.log(self.slider);
+
 		/*self.config = {
 			windowObj: $(window),
 			documentObj: $(document),
@@ -46,19 +48,22 @@ module.exports =
 		};*/
 	}
 },{}],2:[function(require,module,exports){
-//var makeup = require('./Makeup');
+//var inherits = require('inherits');
+var makeup = require('./Makeup');
 
 
-/*Makeup.prototype.construct = function(text) {
+makeup.prototype.construct = function(text) {
 		console.log(text);
-}*/
-
-module.exports = function construct(text) {
-	console.log(text);
-	headerParallax();
 }
-},{}],3:[function(require,module,exports){
-module.exports = function headerParallax() {
+
+module.exports = makeup;
+},{"./Makeup":1}],3:[function(require,module,exports){
+//var inherits = require('inherits');
+var makeup = require('./Makeup');
+
+
+
+makeup.prototype.headerParallax = function() {
 
 	console.log('from header');
 	//headerParallax = function() {
@@ -87,20 +92,24 @@ module.exports = function headerParallax() {
 			});*/
 	//}
 };
-},{}],4:[function(require,module,exports){
+
+module.exports = makeup;
+},{"./Makeup":1}],4:[function(require,module,exports){
 var Makeup = require('./functions/Makeup');
 var construct = require('./functions/construct');
 var headerParallax = require('./functions/headerParallax');
 
 
-//var makeup = new Makeup();
+var makeup = new Makeup();
 
-Makeup.prototype = {
+/*makeup.prototype = {
 	construct: construct,
 	headerParallax: headerParallax
-}
+}*/
 
-construct(Makeup.slider);
+//makeup.construct(makeup);
 
-console.log(makeup);
+//console.log(makeup);
+
+//makeup();
 },{"./functions/Makeup":1,"./functions/construct":2,"./functions/headerParallax":3}]},{},[4]);

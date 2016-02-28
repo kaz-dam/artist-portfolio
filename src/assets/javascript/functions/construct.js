@@ -1,11 +1,7 @@
-//var makeup = require('./Makeup');
+var makeup = require('./Makeup');
 
-
-/*Makeup.prototype.construct = function(text) {
+makeup.prototype.construct = function(text) {
 		console.log(text);
-}*/
-
-module.exports = function construct(text) {
-	console.log(text);
-	headerParallax();
 }
+
+module.exports = makeup;

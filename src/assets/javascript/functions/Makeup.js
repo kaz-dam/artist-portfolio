@@ -14,6 +14,8 @@ module.exports =
 		self.selectedGallery = {};
 		self.positionBeforeGallery = {};
 
+		console.log(self.slider);
+
 		/*self.config = {
 			windowObj: $(window),
 			documentObj: $(document),
