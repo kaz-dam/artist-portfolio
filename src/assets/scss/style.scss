@@ -1,0 +1,27 @@
+/* 
+The main SCSS file for everything, yep
+*/
+
+@import "../fonts/fonts.scss";
+
+@import "tools/reset.scss";
+
+@import "tools/general.scss";
+
+@import "sections/header.scss";
+
+@import "sections/about.scss";
+
+@import "sections/jobs.scss";
+
+@import "sections/references.scss";
+
+@import "sections/contact.scss";
+
+@import "sections/footer.scss";
+
+@import "sections/scroll-menu.scss";
+
+@import "sections/slider.scss";
+
+@import "sections/gallery.scss";
