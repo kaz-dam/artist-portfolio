@@ -1,6 +1,6 @@
+var makeup = require('../functions/Makeup');
 
-
-	function scrollSpeed(step, speed, easing) {
+	makeup.prototype.scrollSpeed = function(step, speed, easing) {
         
         var $document = $(document),
             $window = $(window),
@@ -82,10 +82,12 @@
             if (scrollY && !scroll) view = $window.height();
             if (scrollX && !scroll) view = $window.width();
             
-        });       
-    };
+        });
+        
+        $.easing.default = function (x,t,b,c,d) {
     
-    $.easing.default = function (x,t,b,c,d) {
-    
-        return -c * ((t=t/d-1)*t*t*t - 1) + b;
-    };
+            return -c * ((t=t/d-1)*t*t*t - 1) + b;
+        };
+    }
+
+module.exports = makeup;

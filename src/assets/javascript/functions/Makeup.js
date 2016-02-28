@@ -3,7 +3,7 @@ module.exports =
 	function Makeup() {
 		var self = this;
 
-		self.slider = 'heeey';
+		self.slider = {};
 		self.sliderNavigation = {};
 		self.sliderBack = {};
 		self.svgCoverLayer = {};
@@ -14,9 +14,7 @@ module.exports =
 		self.selectedGallery = {};
 		self.positionBeforeGallery = {};
 
-		console.log(self.slider);
-
-		/*self.config = {
+		self.config = {
 			windowObj: $(window),
 			documentObj: $(document),
 			menu: $('ul.menu li a'),
@@ -44,5 +42,18 @@ module.exports =
 			aboutSection: $('section.about'),
 			contactSection: $('section.contact'),
 			footerSection: $('section.footer')
-		};*/
+		};
+
+		var epsilon = (1000 / 60 / self.config.duration) / 4;
+		self.firstAnimation = self.bezier(0.42,0,0.58,1, epsilon);
+		self.secondAnimation = self.bezier(0.42,0,1,1, epsilon);
+		self.config.sliderWrapper.each( function() {
+			self.initSlider( $(this) );
+		});
+		self.eventWatch();
+		self.galleryPictureAnim();
+		self.brandsRandomAnim();
+		self.brandsLogoBox();
+		self.scrollSpeed( 100, 500 );
+
 	}

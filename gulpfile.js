@@ -89,7 +89,7 @@ gulp.task("html", ["styles"], function () {
   return gulp.src("serve/**/*.html")
     .pipe(assets)
     // Concatenate JavaScript files and preserve important comments
-    .pipe($.if("*.js", $.uglify({preserveComments: "some"})))
+    //.pipe($.if("*.js", $.uglify({preserveComments: "some"})))
     // Minify CSS
     .pipe($.if("*.css", $.minifyCss()))
     // Start cache busting the files
@@ -118,7 +118,7 @@ gulp.task("html", ["styles"], function () {
 
 // Run JS Lint against your JS
 gulp.task("jshint", function () {
-  return gulp.src("./serve/assets/javascript/*.js")
+  return gulp.src("./src/assets/javascript/bundle.js")
     // Checks your JS code quality against your .jshintrc file
     .pipe($.jshint(".jshintrc"))
     .pipe($.jshint.reporter());
@@ -131,11 +131,17 @@ gulp.task("vendor", function() {
       .pipe(gulp.dest('./serve/assets/javascript/vendor/'));
 });
 
-gulp.task("js", function() {
-  return browserify(['src/assets/javascript/main.js'], {})
+gulp.task("js-dev", ["jshint"], function() {
+  return browserify(['src/assets/javascript/main.js'], { debug: true })
           .bundle()
           .pipe(source('bundle.js'))
           .pipe(gulp.dest('src/assets/javascript/'));
+});
+
+gulp.task("js-prod", function() {
+  return gulp.src("./src/assets/javascript/bundle.js")
+            .pipe($.uglify())
+            .pipe(gulp.dest("./src/assets/javascript/bundle.js"));
 });
 
 // Runs "jekyll doctor" on your site to check for errors with your configuration
@@ -145,7 +151,7 @@ gulp.task("doctor", $.shell.task("jekyll doctor"));
 // BrowserSync will serve our site on a local server for us and other devices to use
 // It will also autoreload across all devices as well as keep the viewport synchronized
 // between them.
-gulp.task("serve:dev", ["styles", "jekyll:dev"], function () {
+gulp.task("serve:dev", ["styles", "jekyll:dev", "js-dev"], function () {
   bs = browserSync({
     notify: true,
     // tunnel: "",
@@ -169,7 +175,7 @@ gulp.task("serve:prod", function () {
     notify: false,
     // tunnel: true,
     server: {
-      baseDir: "site"
+      baseDir: "serve"
     }
   });
 });
@@ -183,7 +189,7 @@ gulp.task("check", ["jshint", "doctor"], function () {
 });
 
 // Builds the site but doesn"t serve it to you
-gulp.task("build", ["jekyll:prod", "styles"], function () {});
+gulp.task("build", ["jekyll:prod", "styles", "js-prod"], function () {});
 
 // Builds your site with the "build" command and then runs all the optimizations on
 // it and outputs it to "./site"
