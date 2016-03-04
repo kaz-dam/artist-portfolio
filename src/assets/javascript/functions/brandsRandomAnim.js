@@ -7,6 +7,6 @@ makeup.prototype.brandsRandomAnim = function() {
 		self.config.brandSpans.eq(randomNum).addClass('brand-anim')
 			.siblings().removeClass('brand-anim');
 	}, 3000);
-}
+};
 
 module.exports = makeup;

@@ -4,24 +4,24 @@ makeup.prototype.galleryPictureAnim = function() {
 	var counter = 0,
 		self = this,
 		bgWedding = [
-			'assets/images/wedding-big/wedding1.jpg',
-			'assets/images/wedding-big/wedding2.jpg',
-			'assets/images/wedding-big/wedding3.jpg'
+			'assets/images/wedding/wedding1-small.jpg',
+			'assets/images/wedding/wedding2-small.jpg',
+			'assets/images/wedding/wedding3-small.jpg'
 		],
 		bgFashion = [
-			'assets/images/fashion/fashion1.jpg',
-			'assets/images/fashion/fashion2.jpg',
-			'assets/images/fashion/fashion3.jpg'
+			'assets/images/fashion/fashion1-small.jpg',
+			'assets/images/fashion/fashion2-small.jpg',
+			'assets/images/fashion/fashion3-small.jpg'
 		],
 		bgBeauty = [
-			'assets/images/beauty/beauty1.jpg',
-			'assets/images/beauty/beauty2.jpg',
-			'assets/images/beauty/beauty3.jpg'
+			'assets/images/beauty/beauty1-small.jpg',
+			'assets/images/beauty/beauty2-small.jpg',
+			'assets/images/beauty/beauty3-small.jpg'
 		],
 		bgContest = [
-			'assets/images/contest/contest1.jpg',
-			'assets/images/contest/contest2.jpg',
-			'assets/images/contest/contest3.jpg'
+			'assets/images/contest/contest1-small.jpg',
+			'assets/images/contest/contest2-small.jpg',
+			'assets/images/contest/contest3-small.jpg'
 		];
 
 		self.config.galleryImagesSmall.first().css({
@@ -51,6 +51,6 @@ makeup.prototype.galleryPictureAnim = function() {
 			});
 			++counter;
 		}, 2500);
-}
+};
 
 module.exports = makeup;

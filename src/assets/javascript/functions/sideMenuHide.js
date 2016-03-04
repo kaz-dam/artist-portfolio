@@ -22,6 +22,6 @@ makeup.prototype.sideMenuHide = function() {
 		});
 	}
 	
-}
+};
 
 module.exports = makeup;

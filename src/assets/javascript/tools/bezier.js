@@ -49,6 +49,6 @@ makeup.prototype.bezier = function( x1, y1, x2, y2, epsilon ) {
 
 	};
 
-}
+};
 
 module.exports = makeup;

@@ -22,6 +22,6 @@ makeup.prototype.brandsLogoBox = function() {
 		});
 	});
 	
-}
+};
 
 module.exports = makeup;

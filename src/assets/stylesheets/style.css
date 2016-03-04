@@ -951,6 +951,13 @@ li.gallery ul.wedding-images .visible-image {
   display: block;
   z-index: 2; }
 
+li.gallery ul.wedding-images li p {
+  z-index: 3;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-top: -20px;
+  margin-left: 10px; }
+
 li.gallery div.backward,
 li.gallery div.gallery-nav-hover-back,
 li.gallery div.forward,

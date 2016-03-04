@@ -56,4 +56,4 @@ module.exports =
 		self.brandsLogoBox();
 		self.scrollSpeed( 100, 500 );
 
-	}
+	};

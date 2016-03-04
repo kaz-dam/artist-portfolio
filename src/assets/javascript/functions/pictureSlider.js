@@ -57,6 +57,6 @@ makeup.prototype.pictureSlider = function() {
 		self.config.navDots.removeClass('top-image bounceIn');
 		$(this).addClass('top-image bounceIn');
 	});
-}
+};
 
 module.exports = makeup;

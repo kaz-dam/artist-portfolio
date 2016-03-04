@@ -62,6 +62,6 @@ makeup.prototype.eventWatch = function() {
 	self.pictureSlider();
 
 	self.headerParallax();
-}
+};
 
 module.exports = makeup;

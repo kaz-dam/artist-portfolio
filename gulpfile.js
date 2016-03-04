@@ -20,6 +20,8 @@ var browserify = require('browserify');
 
 var source = require('vinyl-source-stream');
 
+var handlebars = require('handlebars/runtime');
+
 // Deletes the directory that is used to serve the site during development
 gulp.task("clean:dev", del.bind(null, ["serve"]));
 

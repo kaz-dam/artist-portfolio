@@ -12,5 +12,9 @@ var sideMenuHide = require('./functions/sideMenuHide');
 var slowAnchor = require('./tools/slowAnchor');
 var bezier = require('./tools/bezier');
 var scrollSpeed = require('./tools/scrollSpeed');
+var tmplConfig = require('./templates/tmplConfig');
 
 var makeup = new Makeup();
+
+console.log(makeup.pictures[0].description);
+console.log(makeup);

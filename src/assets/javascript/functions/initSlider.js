@@ -22,6 +22,6 @@ makeup.prototype.initSlider = function( sliderWrapper ) {
 	self.pathArray[8] = self.svgCoverLayer.data('step5');
 	self.pathArray[9] = self.svgCoverLayer.data('step10');
 
-}
+};
 
 module.exports = makeup;

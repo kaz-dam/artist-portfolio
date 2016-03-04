@@ -41,6 +41,6 @@ makeup.prototype.updateSlide = function( oldSlide, newSlide, direction, svgCover
 			}, self.config.delay);
 		});
 	});
-}
+};
 
 module.exports = makeup;

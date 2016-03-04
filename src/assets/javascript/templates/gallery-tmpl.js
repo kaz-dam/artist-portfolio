@@ -1,13 +1,14 @@
-(function(){
+var makeup = require('../functions/Makeup');
 
-	renderGallery();
+makeup.prototype.renderGallery = function( /* pass in the gallery-count id */ ) {
 
-	function renderGallery() {
-		var template = $('#gallery-tmpl').html(),
-			compiled = Handlebars.compile(template),
-			rendered = compiled();
+// create var with the pictures of the selected gallery
 
-		$('#gallery-rendered').html(rendered);
-	}
+	var template = $('#gallery-tmpl').html(),
+		compiled = Handlebars.compile(template),
+		rendered = compiled();
 
-})();
+	$('#gallery-rendered').html(rendered);
+};
+
+module.exports = makeup;

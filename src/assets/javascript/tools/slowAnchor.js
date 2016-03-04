@@ -15,6 +15,6 @@ makeup.prototype.slowAnchor = function() {
 		}
 	});
 	
-}
+};
 
 module.exports = makeup;
