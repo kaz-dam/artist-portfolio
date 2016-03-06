@@ -13,8 +13,6 @@ var slowAnchor = require('./tools/slowAnchor');
 var bezier = require('./tools/bezier');
 var scrollSpeed = require('./tools/scrollSpeed');
 var tmplConfig = require('./templates/tmplConfig');
+var renderGallery = require('./templates/renderGallery');
 
 var makeup = new Makeup();
-
-console.log(makeup.pictures[0].description);
-console.log(makeup);

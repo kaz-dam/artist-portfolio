@@ -1,0 +1,3 @@
+	{{#each Makeup.selectedPictures}}
+		<li><img src="assets/images/{{Pictures.filePath}}" alt="{{Pictures.id}}"><p>{{Pictures.description}}</p></li>		<!-- class="visible-image" -->
+	{{/each}}

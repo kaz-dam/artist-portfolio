@@ -13,6 +13,7 @@ module.exports =
 		self.pathArray = [];
 		self.selectedGallery = {};
 		self.positionBeforeGallery = {};
+		self.selectedPictures = [];
 
 		self.config = {
 			windowObj: $(window),
@@ -35,7 +36,7 @@ module.exports =
 			galleryImagesSmall: $('div.slider-nav div.images'),
 			brandSpans: $('section.about p span.brands'),
 			brandPopup: $('section.about p span.popup'),
-			galleryImg: $('li.gallery ul.wedding-images li'),
+			galleryImg: $('li.gallery ul.gallery-images li'),
 			navDots: $('li.gallery div.nav-dots span'),
 			imgBack: $('li.gallery div.backward'),
 			imgForward: $('li.gallery div.forward'),

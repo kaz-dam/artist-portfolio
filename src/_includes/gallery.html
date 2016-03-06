@@ -1,4 +1,4 @@
-<!--<script type="text/x-handlebars-template" id="gallery-tmpl">-->
+<script type="text/x-handlebars-template" id="gallery-tmpl">
 	<div class="back-button">
 		<p><span>F</span>őoldal</p>
 		<div class="back-button-hover"></div>
@@ -8,21 +8,22 @@
 		<div class="backward">
 			{% include icons/arrow.svg %}
 		</div>
-	<ul class="wedding-images">
-		<li class="visible-image"><img src="assets/images/wedding-big/wedding1.jpg" alt="1"><p>Treszkai Anett</p></li>
-		<li><img src="assets/images/wedding-big/wedding2.jpg" alt="1"><p>Szabó Csilla - Csillagkép</p></li>
-		<li><img src="assets/images/wedding-big/wedding3.jpg" alt="1"><p>Laca Soós Photography</p></li>
-		<li><img src="assets/images/wedding-big/wedding4.jpg" alt="1"><p>Gábor Gibbó Kiss - GibbóArt Photograpy</p></li>
-		<li><img src="assets/images/wedding-big/wedding5.jpg" alt="1"><p>Bertók Video &amp; Photo</p></li>
+	<ul class="gallery-images">
+
+		{{#each Makeup.selectedPictures}}
+			<li><img src="assets/images/{{Pictures.filePath}}" alt="{{Pictures.id}}"><p>{{Pictures.description}}</p></li>		<!-- class="visible-image" -->
+		{{/each}}
+
 	</ul>
 	<div class="nav-dots">
-		<span class="top-image"></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
+
+	{{#each Makeup.selectedPictures}}
+		<span></span>			<!-- class="top-image" -->
+	{{/each}}
+
 	</div>
 	<div class="gallery-nav-hover-forward"></div>
 	<div class="forward">
 		{% include icons/arrow.svg %}
 	</div>
+</script>

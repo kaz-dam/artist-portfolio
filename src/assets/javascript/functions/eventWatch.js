@@ -5,15 +5,17 @@ makeup.prototype.eventWatch = function() {
 
 	self.sliderNavigation.on('click', function() {
 		self.selectedGallery = $(this);
-		var selectedSlidePosition = self.selectedGallery.data('gallery-count'), //use self as a reference for the database to find the right images
-			selectedSlide = self.slider.children('li').eq(1), //hard code the index of the gallery slide
+		var selectedSlidePosition = self.selectedGallery.data('gallery-count'),
+			selectedSlide = self.slider.children('li').eq(1),
 			visibleSlide = self.retrieveVisibleSlide(self.slider),
 			visibleSlidePosition = visibleSlide.index(),
 			direction = 'gallery';
 		self.positionBeforeGallery = self.config.windowObj.scrollTop();
 		self.updateSlide(visibleSlide, selectedSlide, direction, self.svgCoverLayer, self.pathArray, self.svgPath);
 
-		// add visible-image and top-image class with the ajax request callback
+		self.renderGallery( selectedSlidePosition );
+		self.galleryImg.first().addClass('visible-image');
+		self.navDots.first().addClass('top-image');
 	});
 
 	self.sliderBack.on('click', function(){

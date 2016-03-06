@@ -19,6 +19,7 @@
   "globals": {
       "$": false,
       "jQuery": false,
-      "Snap": false
+      "Snap": false,
+      "Handlebars": false
   }
 }
