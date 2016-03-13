@@ -32,6 +32,6 @@ makeup.prototype.pictures = [
 	new Picture('3', 'beauty/beauty5.jpg', 'Mátéfy Szabolcs 1 (5) - Szűcs Krisztina', false),
 	new Picture('3', 'beauty/beauty6.jpg', 'Szabo Miklos - Schellenberger Zsuzsanna', false),
 	new Picture('3', 'beauty/beauty7.jpg', 'Sziszik Dániel - Fügedi Dóra Tímea', false)
-]
+];
 
 module.exports = makeup;

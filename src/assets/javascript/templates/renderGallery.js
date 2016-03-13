@@ -7,9 +7,7 @@ makeup.prototype.renderGallery = function( arg ) {
 
 	for (var i = 0; i < self.pictures.length; i++) {
 		if ( Number(self.pictures[i].id) === arg ) {
-
 			self.selectedPictures.push(self.pictures[i]);
-
 		}
 	}
 
@@ -18,6 +16,8 @@ makeup.prototype.renderGallery = function( arg ) {
 
 	$('#tmpl-wrapper ul.gallery-images li').first().addClass('visible-image');
 	$('#tmpl-wrapper div.nav-dots span').first().addClass('top-image');
+
+	self.navDot();
 };
 
 module.exports = makeup;

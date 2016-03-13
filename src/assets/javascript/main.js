@@ -15,5 +15,6 @@ var scrollSpeed = require('./tools/scrollSpeed');
 var tmplConfig = require('./templates/tmplConfig');
 var renderGallery = require('./templates/renderGallery');
 var gallery = require('./templates/templates');
+var navDot = require('./functions/navDot');
 
 var makeup = new Makeup();
