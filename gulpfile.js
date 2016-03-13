@@ -20,7 +20,7 @@ var browserify = require('browserify');
 
 var source = require('vinyl-source-stream');
 
-var handlebars = require('handlebars/runtime');
+//var handlebars = require('handlebars/runtime');
 
 // Deletes the directory that is used to serve the site during development
 gulp.task("clean:dev", del.bind(null, ["serve"]));
@@ -136,6 +136,10 @@ gulp.task("vendor", function() {
 gulp.task("js-dev", ["jshint"], function() {
   return browserify(['src/assets/javascript/main.js'], { debug: true })
           .bundle()
+          /*.pipe($.declare({
+            root: 'module.exports',
+            noRedeclare: true
+          }))*/
           .pipe(source('bundle.js'))
           .pipe(gulp.dest('src/assets/javascript/'));
 });
@@ -144,6 +148,19 @@ gulp.task("js-prod", function() {
   return gulp.src("./src/assets/javascript/bundle.js")
             .pipe($.uglify())
             .pipe(gulp.dest("./src/assets/javascript/bundle.js"));
+});
+
+gulp.task("tmpl", function() {
+  return gulp.src('./src/assets/templates/*.hbs')
+    .pipe($.handlebars())
+    .pipe($.wrap('Handlebars.template(<%= contents %>)'))
+    .pipe($.declare({
+      // namespace: 'Makeup.templates',
+      root: 'module.exports',
+      noRedeclare: true
+    }))
+    .pipe($.concat('templates.js'))
+    .pipe(gulp.dest('./src/assets/javascript/templates/'));
 });
 
 // Runs "jekyll doctor" on your site to check for errors with your configuration

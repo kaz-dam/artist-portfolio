@@ -12,7 +12,7 @@ makeup.prototype.pictures = [
 	new Picture('1', 'wedding/wedding2.jpg', 'Szabó Csilla - Csillagkép', false),
 	new Picture('1', 'wedding/wedding3.jpg', 'Laca Soós - Photography', false),
 	new Picture('1', 'wedding/wedding4.jpg', 'Gábor Gibbó Kiss - GibbóArt Photograpy', false),
-	new Picture('1', 'wedding/wedding5.jpg', 'Bertók Video &amp; Photo', false),
+	new Picture('1', 'wedding/wedding5.jpg', 'Bertók Video & Photo', false),
 	new Picture('4', 'contest/contest1.jpg', 'Mátéfy Szabolcs - Sunbloom', false),
 	new Picture('4', 'contest/contest2.jpg', 'Mátéfy Szabolcs - Meyer Eszter-Virág', false),
 	new Picture('4', 'contest/contest3.jpg', 'Prokop Kata Sminkiskola sminkversenye', false),

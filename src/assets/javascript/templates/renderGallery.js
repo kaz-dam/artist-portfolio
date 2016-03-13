@@ -1,7 +1,9 @@
 var makeup = require('../functions/Makeup');
+var gallery = require('../templates/templates');
 
 makeup.prototype.renderGallery = function( arg ) {
 	var self = this;
+	self.selectedPictures = [];
 
 	for (var i = 0; i < self.pictures.length; i++) {
 		if ( Number(self.pictures[i].id) === arg ) {
@@ -11,11 +13,11 @@ makeup.prototype.renderGallery = function( arg ) {
 		}
 	}
 
-	var template = $('#gallery-tmpl').html(),
-		compiled = Handlebars.compile(template),
-		rendered = compiled(self.selectedPictures);
+	var renderedPics = gallery.gallery({pics: self.selectedPictures});
+	$('#tmpl-wrapper').html(renderedPics);
 
-	$('#gallery-rendered').html(rendered);
+	$('#tmpl-wrapper ul.gallery-images li').first().addClass('visible-image');
+	$('#tmpl-wrapper div.nav-dots span').first().addClass('top-image');
 };
 
 module.exports = makeup;

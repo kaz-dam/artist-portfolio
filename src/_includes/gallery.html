@@ -1,29 +1,15 @@
-<script type="text/x-handlebars-template" id="gallery-tmpl">
-	<div class="back-button">
-		<p><span>F</span>őoldal</p>
-		<div class="back-button-hover"></div>
-		<div class="back-button-sign"></div>
-	</div>
-	<div class="gallery-nav-hover-back"></div>
-		<div class="backward">
-			{% include icons/arrow.svg %}
-		</div>
-	<ul class="gallery-images">
-
-		{{#each Makeup.selectedPictures}}
-			<li><img src="assets/images/{{Pictures.filePath}}" alt="{{Pictures.id}}"><p>{{Pictures.description}}</p></li>		<!-- class="visible-image" -->
-		{{/each}}
-
-	</ul>
-	<div class="nav-dots">
-
-	{{#each Makeup.selectedPictures}}
-		<span></span>			<!-- class="top-image" -->
-	{{/each}}
-
-	</div>
-	<div class="gallery-nav-hover-forward"></div>
-	<div class="forward">
+<div class="back-button">
+	<p><span>F</span>őoldal</p>
+	<div class="back-button-hover"></div>
+	<div class="back-button-sign"></div>
+</div>
+<div class="gallery-nav-hover-back"></div>
+	<div class="backward">
 		{% include icons/arrow.svg %}
 	</div>
-</script>
+<div id="tmpl-wrapper">
+</div>
+<div class="gallery-nav-hover-forward"></div>
+<div class="forward">
+	{% include icons/arrow.svg %}
+</div>

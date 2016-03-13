@@ -14,8 +14,6 @@ makeup.prototype.eventWatch = function() {
 		self.updateSlide(visibleSlide, selectedSlide, direction, self.svgCoverLayer, self.pathArray, self.svgPath);
 
 		self.renderGallery( selectedSlidePosition );
-		self.galleryImg.first().addClass('visible-image');
-		self.navDots.first().addClass('top-image');
 	});
 
 	self.sliderBack.on('click', function(){

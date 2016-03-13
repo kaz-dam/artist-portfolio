@@ -36,8 +36,8 @@ module.exports =
 			galleryImagesSmall: $('div.slider-nav div.images'),
 			brandSpans: $('section.about p span.brands'),
 			brandPopup: $('section.about p span.popup'),
-			galleryImg: $('li.gallery ul.gallery-images li'),
-			navDots: $('li.gallery div.nav-dots span'),
+			// galleryImg: $('#tmpl-wrapper ul.gallery-images li'),	not defined
+			// navDots: $('#tmpl-wrapper div.nav-dots span'),	not defined
 			imgBack: $('li.gallery div.backward'),
 			imgForward: $('li.gallery div.forward'),
 			aboutSection: $('section.about'),

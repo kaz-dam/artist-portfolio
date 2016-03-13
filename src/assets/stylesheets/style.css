@@ -922,7 +922,11 @@ li.gallery {
   width: 100%;
   height: 100%; }
 
-li.gallery ul.wedding-images {
+#tmpl-wrapper {
+  width: 100%;
+  height: 100%; }
+
+#tmpl-wrapper ul.gallery-images {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -935,7 +939,7 @@ li.gallery ul.wedding-images {
       -ms-flex-pack: center;
           justify-content: center; }
 
-li.gallery ul.wedding-images li {
+#tmpl-wrapper ul.gallery-images li {
   display: none;
   margin-top: 25px;
   height: 95%;
@@ -944,14 +948,14 @@ li.gallery ul.wedding-images li {
   border: 2px solid white;
   pointer-events: none; }
 
-li.gallery ul.wedding-images li img {
+#tmpl-wrapper ul.gallery-images li img {
   height: 100%; }
 
-li.gallery ul.wedding-images .visible-image {
+#tmpl-wrapper ul.gallery-images .visible-image {
   display: block;
   z-index: 2; }
 
-li.gallery ul.wedding-images li p {
+#tmpl-wrapper ul.gallery-images li p {
   z-index: 3;
   font-weight: bold;
   letter-spacing: 3px;
