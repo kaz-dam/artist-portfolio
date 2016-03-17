@@ -473,7 +473,9 @@ div.cta-header p::first-letter {
 @media screen and (max-width: 1000px) {
   section.header {
     height: 550px;
-    float: left; }
+    float: left;
+    background-position: center;
+    background-size: 170%; }
   div.menu {
     height: 50px;
     position: fixed;
@@ -923,13 +925,14 @@ li.gallery {
   height: 100%; }
 
 #tmpl-wrapper {
+  position: relative;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 #tmpl-wrapper ul.gallery-images {
   height: 100%;
   width: 100%;
-  overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -943,7 +946,7 @@ li.gallery {
   display: none;
   margin-top: 25px;
   height: 95%;
-  z-index: 1;
+  z-index: 2;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   border: 2px solid white;
   pointer-events: none; }
@@ -955,12 +958,26 @@ li.gallery {
   display: block;
   z-index: 2; }
 
-#tmpl-wrapper ul.gallery-images li p {
-  z-index: 3;
+#tmpl-wrapper div.picture-description {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  left: 230px;
+  top: 100px; }
+
+#tmpl-wrapper div.current-description {
+  display: block;
+  z-index: 2; }
+
+#tmpl-wrapper div.picture-description p {
   font-weight: bold;
-  letter-spacing: 3px;
-  margin-top: -20px;
-  margin-left: 10px; }
+  font-size: 9px;
+  letter-spacing: 5px;
+  margin: 10px 10px; }
 
 li.gallery div.backward,
 li.gallery div.gallery-nav-hover-back,
@@ -1077,9 +1094,6 @@ li.gallery div.nav-dots {
       -ms-flex-pack: center;
           justify-content: center; }
 
-li.gallery div.nav-dots:hover span {
-  opacity: 1; }
-
 li.gallery div.nav-dots span {
   -webkit-transition: all 0.4s;
           transition: all 0.4s;
@@ -1094,8 +1108,10 @@ li.gallery div.nav-dots span {
   cursor: pointer; }
 
 li.gallery div.nav-dots span.top-image {
-  background-color: white;
-  opacity: 0.5; }
+  background-color: white; }
+
+li.gallery div.nav-dots:hover span {
+  opacity: 1; }
 
 /* --- animations --- */
 .go-back {

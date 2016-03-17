@@ -16,7 +16,8 @@ makeup.prototype.renderGallery = function( arg ) {
 
 	$('#tmpl-wrapper ul.gallery-images li').first().addClass('visible-image');
 	$('#tmpl-wrapper div.nav-dots span').first().addClass('top-image');
-
+	$('#tmpl-wrapper div.picture-description').first().addClass('current-description');
+	
 	self.navDot();
 };
 

@@ -1,6 +1,6 @@
 <ul class="gallery-images">
 		{{#each pics}}
-			<li><img src="assets/images/{{filePath}}" alt="{{id}}"><p>{{description}}</p></li>
+			<li><img src="assets/images/{{filePath}}" alt="{{id}}"></li>
 		{{/each}}
 </ul>
 <div class="nav-dots">
@@ -8,3 +8,10 @@
 		<span></span>
 	{{/each}}
 </div>
+{{#each pics}}
+	<div class="picture-description">
+		{{#descriptionHelper}}{{firstLine}}{{/descriptionHelper}}
+		{{#descriptionHelper}}{{secondLine}}{{/descriptionHelper}}
+		{{#descriptionHelper}}{{thirdLine}}{{/descriptionHelper}}
+	</div>
+{{/each}}
