@@ -35,22 +35,25 @@ makeup.prototype.galleryPictureAnim = function() {
 		});
 		++counter;
 
-		setInterval(function() {
-			if ( counter > 2 ) {
-				counter = 0;
-			}
+		if (self.config.windowObj.width() > 1040) {
+			setInterval(function() {
+				if ( counter > 2 ) {
+					counter = 0;
+				}
 
-			self.config.galleryImagesSmall.first().css({
-				backgroundImage: 'url(' + bgWedding[counter] + ')'
-			}).next().delay(2500).css({
-				backgroundImage: 'url(' + bgFashion[counter] + ')'
-			}).next().delay(2500).css({
-				backgroundImage: 'url(' + bgBeauty[counter] + ')'
-			}).next().delay(2500).css({
-				backgroundImage: 'url(' + bgContest[counter] + ')'
-			});
-			++counter;
-		}, 2500);
+				self.config.galleryImagesSmall.first().css({
+					backgroundImage: 'url(' + bgWedding[counter] + ')'
+				}).next().delay(2500).css({
+					backgroundImage: 'url(' + bgFashion[counter] + ')'
+				}).next().delay(2500).css({
+					backgroundImage: 'url(' + bgBeauty[counter] + ')'
+				}).next().delay(2500).css({
+					backgroundImage: 'url(' + bgContest[counter] + ')'
+				});
+				++counter;
+			}, 2500);
+		}
+		
 };
 
 module.exports = makeup;

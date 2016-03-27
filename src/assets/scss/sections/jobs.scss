@@ -17,6 +17,7 @@ div.icon-wrapper {
 	display: flex;
 	justify-content: space-between;
 	max-width: 960px;
+	transition: all 0.4s
 }
 
 section.jobs div.shoe,
@@ -27,7 +28,7 @@ div.bride {
 	max-width: 300px;
 }
 
-section.jobs .arrow {
+section.jobs div.icon-wrapper div .arrow {
 	display: block;
 	transform: rotateZ(-90deg);
 	width: 30px;
@@ -36,14 +37,19 @@ section.jobs .arrow {
 	transition: all .3s;
 }
 
-section.jobs .arrow:hover {
-	transform: rotateZ(-90deg) scale(1.2);
+div.icon-wrapper .arrow {
+	display: none;
 }
 
-section.jobs .arrow:hover polyline {
-	fill: #000;
-}
+@media screen and (min-width: 1040px) {
+	section.jobs div.icon-wrapper div .arrow:hover {
+		transform: rotateZ(-90deg) scale(1.2);
+	}
 
+	section.jobs div.icon-wrapper div .arrow:hover polyline {
+		fill: #000;
+	}
+}
 section.jobs .arrow polyline {
 	stroke: #000;
 }
@@ -51,23 +57,22 @@ section.jobs .arrow polyline {
 section.jobs ul.description {
 	margin: 0 auto;
 	max-width: 960px;
-	padding-bottom: 10%;
+	height: 130px;
 	position: relative;
 	overflow: hidden;
+	transition: all 0.5s;
 }
 
 ul.description li {
+	display: none;
 	position: absolute;
-	top: 0;
+	top: 2%;
 	left: 5%;
 	width: 90%;
 	height: 90%;
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 0 3px 10px rgba(0,0,0,.8);
-	opacity: 0;
-	transform: rotateX(90deg);
-	transition: all .4s;
 	pointer-events: none;
 }
 
@@ -76,8 +81,7 @@ ul.description p {
 	font-size: 22px;
 	text-transform: initial;
 	font-weight: 400;
-	padding: 30px;
-	margin: 0 auto;
+	margin: 15px auto;
 	max-width: 70%;
 }
 
@@ -85,10 +89,8 @@ ul.description p::first-line {
 	font-weight: 700;
 }
 
-ul.description .selected-description {
-	opacity: 1;
-	transform: rotateX(0deg);
-	top: 5%;
+ul.description li.selected-description {
+	display: block;
 }
 
 div.borders {
@@ -100,4 +102,137 @@ div.borders {
 	height: 650px;
 	border-top: 2px solid #000;
 	border-bottom: 2px solid #000;
+	z-index: 0;
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceOutDown {
+  20% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  40%, 45% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+
+.bounceOutDown {
+  animation-name: bounceOutDown;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.bounceInUp {
+  animation-name: bounceInUp;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+@media screen and (max-width: 1040px) {
+	section.jobs {
+		height: 600px;
+	}
+
+	#bride {
+		width: 80px;
+	}
+
+	#shoe,
+	#camera {
+		width: 130px;
+	}
+
+	section.jobs .arrow {
+		width: 27px;
+	}
+
+	div.icon-wrapper {
+		justify-content: space-around;
+	}
+
+	section.jobs ul.description {
+		height: 155px;
+	}
+
+	ul.description p {
+		margin: 15px auto;
+	}
+
+	div.borders {
+		height: 600px;
+	}
+}
+
+@media screen and (max-width: 710px) {
+	#bride {
+		width: 80px;
+	}
+
+	#shoe,
+	#camera {
+		width: 130px;
+	}
+
+	section.jobs div.icon-wrapper div .arrow,
+	section.jobs div.shoe,
+	div.camera,
+	div.bride {
+		display: none;
+	}
+
+	div.icon-wrapper {
+		justify-content: space-around;
+		z-index: 10;
+		margin: 10px auto 35px;
+	}
+
+	div.icon-wrapper div.chosen-job,
+	div.icon-wrapper .arrow {
+		display: block;
+	}
+
+	div.icon-wrapper .arrow:last-child {
+		transform: rotateZ(180deg);
+	}
+
+	section.jobs ul.description {
+		height: 170px;
+	}
+
+	ul.description p {
+		max-width: 95%;
+	}
 }

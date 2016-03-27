@@ -1,15 +1,8 @@
 section.contact {
 	position: fixed;
+	background-color: white;
 	bottom: 50px;
 	z-index: -1;
-}
-
-.hide-on-top {
-	display: none;
-}
-
-.show-on-scroll {
-	display: block;
 }
 
 section.contact h1 {
@@ -19,35 +12,56 @@ section.contact h1 {
 
 section.contact div.social {
 	max-width: 470px;
-	margin: 0 auto;
+	margin: 0 auto 115px;
+	display: flex;
+	justify-content: space-between;
 }
 
 div.social svg {
-	margin-bottom: 115px;
 	cursor: pointer;
 	border-radius: 50%;
 	transition: all .2s;
 }
 
-#email,
-#face {
-	margin-right: 93px;
+@media screen and (min-width: 1040px) {
+	#email:hover,
+	#face:hover,
+	#insta:hover {
+		transform: scale(1.1);
+	}
+
+	#email:hover {
+		fill: #d14836;
+	}
+
+	#face:hover {
+		fill: #3a5795;
+	}
+
+	#insta:hover {
+		fill: #125688;
+	}
 }
 
-#email:hover,
-#face:hover,
-#insta:hover {
-	transform: scale(1.1);
+@media screen and (max-width: 1040px) {
+	section.contact h1 {
+		padding: 230px 0 45px;
+	}
 }
 
-#email:hover {
-	fill: #d14836;
-}
+@media screen and (max-width: 710px) {
+	section.contact {
+		bottom: 35px;
+	}
 
-#face:hover {
-	fill: #3a5795;
-}
+	section.contact div.social {
+		justify-content: space-around;
+		margin: 0 auto 90px;
+	}
 
-#insta:hover {
-	fill: #125688;
+	#email,
+	#face,
+	#insta {
+		transform: scale(0.9);
+	}
 }

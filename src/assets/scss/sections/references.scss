@@ -23,6 +23,7 @@ div.margin {
 section.references div.slider-nav {
 	max-width: 664px;
 	margin: 0 auto;
+	justify-content: space-between;
 }
 
 div.slider-nav div.images {
@@ -48,27 +49,14 @@ div.slider-nav div.images div.gallery {
 	transform: rotateX(90deg);
 }
 
-div.slider-nav div.images:hover div.gallery {
-	transform: rotateX(0deg);
+@media screen and (min-width: 1040px) {
+	div.slider-nav div.images:hover div.gallery {
+		transform: rotateX(0deg);
+	}
 }
 
 div.slider-nav div.gallery,
-div.slider-nav div.images:nth-of-type(1) {
-	width: 300px;
-	height: 300px;
-}
-
-div.slider-nav div.images:nth-of-type(2) {
-	width: 300px;
-	height: 300px;
-}
-
-div.slider-nav div.images:nth-of-type(3) {
-	width: 300px;
-	height: 300px;
-}
-
-div.slider-nav div.images:nth-of-type(4) {
+div.slider-nav div.images {
 	width: 300px;
 	height: 300px;
 }
@@ -84,4 +72,77 @@ div.images div.gallery h2 {
 
 div.slider-nav h2 span {
 	font-size: 23px;
+}
+
+@media screen and (max-width: 1040px) {
+	section.references {
+		height: 850px;
+	}
+
+	section.references div.slider-nav {
+		max-width: 624px;
+	}
+
+	div.slider-nav div.gallery,
+	div.slider-nav div.images {
+		width: 280px;
+		height: 280px;
+	}
+
+	div.slider-nav div.images div.gallery {
+		transform: rotateX(0deg);
+		background-color: rgba(0,0,0,.5);
+	}
+
+	div.images div.gallery h2 {
+		font-size: 15px;
+		letter-spacing: 7px;
+		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 710px) {
+	section.references {
+		height: 880px;
+		margin-bottom: 360px;
+	}
+
+	section.references div.slider-nav {
+		max-width: 450px;
+	}
+
+	div.slider-nav div.gallery {
+		width: 100%;
+		height: 150px;
+	}
+
+	div.slider-nav div.images {
+		display: block;
+		width: 85%;
+		height: 150px;
+		margin: 15px auto;
+		// background-position: center top;
+	}
+
+	div.slider-nav div.images:nth-of-type(1) {
+		background-position: 50% 20%;
+	}
+
+	div.slider-nav div.images:nth-of-type(2) {
+		background-position: 50% 25%;
+	}
+
+	div.slider-nav div.images:nth-of-type(4) {
+		background-position: 50% 27%;
+	}
+
+	div.images div.gallery h2 {
+		font-size: 11px;
+		letter-spacing: 8px;
+		margin: 5px 10px;
+	}
+
+	div.slider-nav h2 span {
+		font-size: 18px;
+	}
 }

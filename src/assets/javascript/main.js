@@ -17,5 +17,6 @@ var renderGallery = require('./templates/renderGallery');
 var gallery = require('./templates/templates');
 var navDot = require('./functions/navDot');
 var helpers = require('./templates/helpers');
+var jobSwipe = require('./functions/jobSwipe');
 
 var makeup = new Makeup();

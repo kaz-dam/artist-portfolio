@@ -13,3 +13,15 @@ section.footer p {
 	line-height: 50px;
 	letter-spacing: 3px;
 }
+
+@media screen and (max-width: 710px) {
+	section.footer {
+		height: auto;
+	}
+
+	section.footer p {
+		letter-spacing: 2px;
+		line-height: normal;
+		padding: 10px 0;
+	}
+}

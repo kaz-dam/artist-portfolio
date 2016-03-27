@@ -70,8 +70,28 @@ section.about img {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1040px) {
 	section.about {
 		clear: both;
+		margin-top: 550px;
+	}
+
+	section.about img {
+		width: 200px;
+	}
+
+	section.about p {
+		margin: 55px 20px;
+	}
+}
+
+@media screen and (max-width: 710px) {
+	section.about {
+		clear: both;
+		margin-top: 500px;
+	}
+
+	section.about img {
+		width: 170px;
 	}
 }

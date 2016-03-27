@@ -2,11 +2,15 @@ section.header {
 	background-image: url(../images/header.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center bottom;
+	background-position: center center;
 	background-attachment: fixed;
 	height: 730px;
 	width: 100%;
 	position: absolute;
+}
+
+div.mobile-bgimg {
+	display: none;
 }
 
 div.menu {
@@ -21,6 +25,10 @@ div.menu {
 ul.menu {
 	float: right;
 	margin-right: 40px;
+}
+
+div.menu div.small-width {
+	display: none;
 }
 
 /*
@@ -44,9 +52,11 @@ ul.menu li a {
 	transition: all .2s;
 }
 
-ul.menu li a:hover {
-	color: rgba(175,175,175,1);
-	transform: scale(1.15);
+@media screen and (min-width: 1040px) {
+	ul.menu li a:hover {
+		color: rgba(175,175,175,1);
+		transform: scale(1.15);
+	}
 }
 
 /*
@@ -68,8 +78,10 @@ div.menu a.logo {
 	margin: 14px 50px;
 }
 
-div.menu a.logo:hover #logo {
-	transform: scale(1.45);
+@media screen and (min-width: 1040px) {
+	div.menu a.logo:hover #logo {
+		transform: scale(1.45);
+	}
 }
 
 /*
@@ -121,7 +133,6 @@ section.header p.author::first-letter {
 }
 
 div.cta-header {
-	/*opacity: 0;*/
 	margin: 15px auto;
 	background-color: rgba(0,0,0,.3);
 	border-radius: 13px;
@@ -133,8 +144,10 @@ div.cta-header {
 	transition: all .2s;
 }
 
-div.cta-header:hover {
-	background-color: rgba(0,0,0,.6);
+@media screen and (min-width: 1040px) {
+	div.cta-header:hover {
+		background-color: rgba(0,0,0,.6);
+	}
 }
 
 div.cta-header a {
@@ -150,12 +163,23 @@ div.cta-header p::first-letter {
 	font-size: 19px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1040px) {
 	section.header {
+		background-image: none;
 		height: 550px;
-		float: left;
-		background-position: center;
-		background-size: 170%;
+	}
+
+	div.mobile-bgimg {
+		display: block;
+		width: 100%;
+		height: 700px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-image: url(../images/header-mid.jpg);
+		background-size: cover;
+		background-position: center center;
+		z-index: -1;
 	}
 
 	div.menu {
@@ -185,13 +209,13 @@ div.cta-header p::first-letter {
 	}
 
 	div.heading h1 span {
-		font-size: 60px;
+		font-size: 55px;
 	}
 
 	div.heading p {
 		font-size: 10px;
 		letter-spacing: 4px;
-}
+	}
 
 	div.heading p span {
 		font-size: 15px;
@@ -199,9 +223,99 @@ div.cta-header p::first-letter {
 
 	div.cta-header {
 		margin: 15px auto 0;
+		width: 170px;
+		height: 40px;
+		line-height: 40px;
+	}
+
+	div.cta-header p {
+		font-size: 11px;
+	}
+
+	div.cta-header p::first-letter {
+		font-size: 15px;
 	}
 
 	section.header p.author {
-		margin: 0;
+		margin-top: 140px;
+	}
+}
+
+@media screen and (max-width: 710px) {
+	section.header {
+		background-image: none;
+		height: 500px;
+	}
+
+	div.menu a.logo {
+		margin: 14px 20px;
+	}
+
+	div.menu {
+		transition: all 0.3s;
+	}
+
+	div.menu ul.menu {
+		opacity: 0;		// control with js
+		position: fixed;
+		top: 50px;
+		display: block;
+		float: none;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	div.menu ul.menu li {
+		display: block;
+		float: none;
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+		background-color: rgba(0,0,0,0.5);
+		border-top: 1px solid white;
+	}
+
+	div.menu div.small-width {
+		display: block;
+		width: 50px;
+		height: 50px;
+		float: right;
+		margin-right: 10px;
+	}
+
+	div.menu div.small-width span {
+		display: block;
+		width: 100%;
+		height: 5px;
+		background-color: white;
+		border-radius: 2px;
+		margin: 9px 0;
+	}
+
+	div.heading {
+		max-width: 280px;
+		height: 100px;
+	}
+
+	div.heading h1 {
+		font-size: 25px;
+		letter-spacing: 11px;
+	}
+
+	div.heading h1 span {
+		font-size: 32px;
+	}
+
+	div.heading p {
+		font-size: 8px;
+		letter-spacing: 2px;
+	}
+
+	div.heading p span {
+		font-size: 11px;
+	}
+
+	section.header p.author {
+		margin-top: 120px;
 	}
 }

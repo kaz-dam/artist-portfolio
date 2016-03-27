@@ -4,7 +4,7 @@ makeup.prototype.sideMenuHide = function() {
 
 	var self = this;
 
-	if ( self.config.windowObj.width() > 1000 ) {
+	if ( self.config.windowObj.width() > 1040 ) {
 		self.config.windowObj.on('scroll', function() {
 			var position = self.config.windowObj.scrollTop();
 			if ( position <= 440 || position === 0 ) {

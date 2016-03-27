@@ -49,17 +49,26 @@ makeup.prototype.eventWatch = function() {
 				
 			var clickedElem = $(this),
 				clickedElemIndex = self.config.jobDescriptionArrow.index(clickedElem),
-				elemToShow = self.config.jobDescription.eq(clickedElemIndex);
+				elemToShow = self.config.jobDescription.eq(clickedElemIndex),
+				currentElem = $('ul.description li.selected-description');
 
 			if ( !elemToShow.hasClass('selected-description') ) {
-				elemToShow.addClass('selected-description');
-				self.config.jobDescription.not(elemToShow).removeClass('selected-description');
+				elemToShow.addClass('selected-description bounceInUp');
+				currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
+				setTimeout(function() {
+					self.config.jobDescription.not(elemToShow).removeClass();
+				}, 800);
 			} else {
-				elemToShow.removeClass('selected-description');
+				currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
+				setTimeout(function() {
+					currentElem.removeClass();
+				}, 800);
 			}
 	});
 
 	self.pictureSlider();
+
+	self.jobSwipe();
 
 	self.headerParallax();
 };

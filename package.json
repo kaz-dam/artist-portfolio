@@ -38,6 +38,7 @@
     "gulp-useref": "^1.0.2",
     "gulp-util": "^3.0.7",
     "gulp-wrap": "^0.11.0",
+    "jquery-touchswipe": "^1.6.15",
     "jshint-stylish": "^1.0.0",
     "merge-stream": "^0.1.6",
     "vinyl-source-stream": "^1.1.0"
