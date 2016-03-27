@@ -20,9 +20,7 @@ div.icon-wrapper {
 	transition: all 0.4s
 }
 
-section.jobs div.shoe,
-div.camera,
-div.bride {
+div.icon-wrapper div {
 	text-align: center;
 	display: inline-block;
 	max-width: 300px;
@@ -181,6 +179,7 @@ div.borders {
 
 	div.icon-wrapper {
 		justify-content: space-around;
+		// display: flex;
 	}
 
 	section.jobs ul.description {
@@ -207,16 +206,15 @@ div.borders {
 	}
 
 	section.jobs div.icon-wrapper div .arrow,
-	section.jobs div.shoe,
-	div.camera,
-	div.bride {
+	div.icon-wrapper div {
 		display: none;
 	}
 
 	div.icon-wrapper {
-		justify-content: space-around;
+		// justify-content: space-around;
 		z-index: 10;
 		margin: 10px auto 35px;
+		overflow: hidden;
 	}
 
 	div.icon-wrapper div.chosen-job,
@@ -235,4 +233,74 @@ div.borders {
 	ul.description p {
 		max-width: 95%;
 	}
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInRight {
+  animation-name: fadeInRight;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.fadeOutRight {
+  animation-name: fadeOutRight;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
+}
+
+.fadeOutLeft {
+  animation-name: fadeOutLeft;
+  animation-duration: 0.6s;
+  animation-fill-mode: both;
 }

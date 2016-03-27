@@ -45,26 +45,28 @@ makeup.prototype.eventWatch = function() {
 
 	self.slowAnchor();
 
-	self.config.jobDescriptionArrow.on('click', function() {
-				
-			var clickedElem = $(this),
-				clickedElemIndex = self.config.jobDescriptionArrow.index(clickedElem),
-				elemToShow = self.config.jobDescription.eq(clickedElemIndex),
-				currentElem = $('ul.description li.selected-description');
+	if (self.config.windowObj.width() > 1040) {
+		self.config.jobDescriptionArrow.on('click', function() {
+					
+				var clickedElem = $(this),
+					clickedElemIndex = self.config.jobDescriptionArrow.index(clickedElem),
+					elemToShow = self.config.jobDescription.eq(clickedElemIndex),
+					currentElem = $('ul.description li.selected-description');
 
-			if ( !elemToShow.hasClass('selected-description') ) {
-				elemToShow.addClass('selected-description bounceInUp');
-				currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
-				setTimeout(function() {
-					self.config.jobDescription.not(elemToShow).removeClass();
-				}, 800);
-			} else {
-				currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
-				setTimeout(function() {
-					currentElem.removeClass();
-				}, 800);
-			}
-	});
+				if ( !elemToShow.hasClass('selected-description') ) {
+					elemToShow.addClass('selected-description bounceInUp');
+					currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
+					setTimeout(function() {
+						self.config.jobDescription.not(elemToShow).removeClass();
+					}, 800);
+				} else {
+					currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
+					setTimeout(function() {
+						currentElem.removeClass();
+					}, 800);
+				}
+		});
+	}
 
 	self.pictureSlider();
 
