@@ -53,10 +53,9 @@ section.contact {
 	width: 100%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1040px) {
 	ul.menu li a::first-letter,
 	ul.side-menu a::first-letter,
-	section.about p,
 	section.footer p::first-letter {
 		font-size: 16px;
 	}

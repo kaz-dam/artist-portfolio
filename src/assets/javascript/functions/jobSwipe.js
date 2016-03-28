@@ -48,11 +48,59 @@ makeup.prototype.jobSwipe = function() {
 			}, 500);
 		},
 
+		treshold: 0
+	});
+
+	$('div.borders div.icon-wrapper .arrow').first().swipe({
 		tap: function(event, target) {
-			console.log('tapped');
+			var jobs = $('div.icon-wrapper div'),
+				selectedDesc = $('ul.description li.selected-description').index();
+
+			self.config.jobDescription.eq(selectedDesc).addClass('fadeOutRight');
+			jobs.eq(selectedDesc).addClass('fadeOutRight');
+
+			setTimeout(function() {
+				if (selectedDesc > 0) {
+					self.config.jobDescription.removeClass()
+						.eq(selectedDesc - 1).addClass('fadeInLeft selected-description');
+					jobs.removeClass()
+						.eq(selectedDesc - 1).addClass('fadeInLeft chosen-job');
+				} else {
+					self.config.jobDescription.removeClass()
+						.eq(2).addClass('fadeInLeft selected-description');
+					jobs.removeClass()
+						.eq(2).addClass('fadeInLeft chosen-job');
+				}
+			}, 500);
 		},
 
-		treshold: 0
+		treshold: 50
+	});
+
+	$('div.borders div.icon-wrapper .arrow').last().swipe({
+		tap: function(event, target) {
+			var jobs = $('div.icon-wrapper div'),
+				selectedDesc = $('ul.description li.selected-description').index();
+
+			self.config.jobDescription.eq(selectedDesc).addClass('fadeOutLeft');
+			jobs.eq(selectedDesc).addClass('fadeOutLeft');
+
+			setTimeout(function() {
+				if (selectedDesc < 2) {
+					self.config.jobDescription.removeClass()
+						.eq(selectedDesc + 1).addClass('fadeInRight selected-description');
+					jobs.removeClass()
+						.eq(selectedDesc + 1).addClass('fadeInRight chosen-job');
+				} else {
+					self.config.jobDescription.removeClass()
+						.eq(0).addClass('fadeInRight selected-description');
+					jobs.removeClass()
+						.eq(0).addClass('fadeInRight chosen-job');
+				}
+			}, 500);
+		},
+
+		treshold: 50
 	});
 	
 };

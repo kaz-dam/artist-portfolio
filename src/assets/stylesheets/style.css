@@ -326,10 +326,9 @@ section.contact {
   background-color: #fff;
   width: 100%; }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1040px) {
   ul.menu li a::first-letter,
   ul.side-menu a::first-letter,
-  section.about p,
   section.footer p::first-letter {
     font-size: 16px; }
   ul.menu li a,
@@ -539,14 +538,16 @@ div.cta-header p::first-letter {
     -webkit-transition: all 0.3s;
             transition: all 0.3s; }
   div.menu ul.menu {
-    opacity: 0;
+    display: block;
     position: fixed;
     top: 50px;
     display: block;
     float: none;
     margin: 0 auto;
     width: 100%; }
-  div.menu ul.menu li {
+  div.menu ul li {
+    display: none; }
+  div.menu ul.menu li.show-menu {
     display: block;
     float: none;
     width: 100%;
@@ -566,7 +567,9 @@ div.cta-header p::first-letter {
     height: 5px;
     background-color: white;
     border-radius: 2px;
-    margin: 9px 0; }
+    margin: 9px 0;
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s; }
   div.heading {
     max-width: 280px;
     height: 100px; }
@@ -582,6 +585,118 @@ div.cta-header p::first-letter {
     font-size: 11px; }
   section.header p.author {
     margin-top: 120px; } }
+
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1; }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px); } }
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in; }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1; }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+  to {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px); } }
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@-webkit-keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px); }
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1; }
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0; } }
+
+@keyframes flipOutX {
+  from {
+    -webkit-transform: perspective(400px);
+            transform: perspective(400px); }
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1; }
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0; } }
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+          animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+          backface-visibility: visible !important;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+          backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+          animation-name: flipInX;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
 
 section.about {
   text-align: center;
@@ -682,6 +797,14 @@ section.jobs {
   height: 650px;
   position: relative; }
 
+div.borders {
+  max-width: 960px;
+  margin: 0 auto;
+  height: inherit;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  z-index: 0; }
+
 #bride {
   width: 90px; }
 
@@ -733,20 +856,16 @@ section.jobs .arrow polyline {
 
 section.jobs ul.description {
   margin: 0 auto;
-  max-width: 960px;
-  height: 130px;
-  position: relative;
+  padding-bottom: 55px;
+  max-width: 760px;
   overflow: hidden;
   -webkit-transition: all 0.5s;
           transition: all 0.5s; }
 
 ul.description li {
   display: none;
-  position: absolute;
-  top: 2%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
+  margin: 5px 20px;
+  max-width: 760px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
@@ -757,7 +876,8 @@ ul.description p {
   font-size: 22px;
   text-transform: initial;
   font-weight: 400;
-  margin: 15px auto;
+  padding: 15px;
+  margin: 0 auto;
   max-width: 70%; }
 
 ul.description p::first-line {
@@ -765,17 +885,6 @@ ul.description p::first-line {
 
 ul.description li.selected-description {
   display: block; }
-
-div.borders {
-  position: absolute;
-  top: 0;
-  left: 15%;
-  right: 15%;
-  /*width: 50%;*/
-  height: 650px;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  z-index: 0; }
 
 @-webkit-keyframes bounceInUp {
   from, 60%, 75%, 90%, to {
@@ -865,7 +974,7 @@ div.borders {
 
 @media screen and (max-width: 1040px) {
   section.jobs {
-    height: 600px; }
+    height: auto; }
   #bride {
     width: 80px; }
   #shoe,
@@ -877,12 +986,10 @@ div.borders {
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around; }
-  section.jobs ul.description {
-    height: 155px; }
   ul.description p {
-    margin: 15px auto; }
+    padding: 15px auto; }
   div.borders {
-    height: 600px; } }
+    margin: 0 20px; } }
 
 @media screen and (max-width: 710px) {
   #bride {
@@ -904,9 +1011,10 @@ div.borders {
     -webkit-transform: rotateZ(180deg);
             transform: rotateZ(180deg); }
   section.jobs ul.description {
-    height: 170px; }
+    min-height: auto; }
   ul.description p {
-    max-width: 95%; } }
+    max-width: 95%;
+    padding: 5px auto; } }
 
 @-webkit-keyframes fadeOutLeft {
   from {
@@ -1205,7 +1313,8 @@ section.footer p {
   section.footer p {
     letter-spacing: 2px;
     line-height: normal;
-    padding: 10px 0; } }
+    padding: 10px 0;
+    margin: 0 10px; } }
 
 div.scroll-menu {
   background-color: #000;

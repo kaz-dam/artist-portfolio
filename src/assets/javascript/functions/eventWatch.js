@@ -25,23 +25,25 @@ makeup.prototype.eventWatch = function() {
 
 	self.sideMenuHide();
 
-	self.sliderNavigation.on('mouseenter', function(){
-		var hoveredGallery = $(this),
-			galleryName = hoveredGallery.find('h2');
-		galleryName.animate({
-			opacity: '1',
-			letterSpacing: '4px'
-		}, 400);
-	});
+	if (self.config.windowObj.width() > 1040) {
+		self.sliderNavigation.on('mouseenter', function(){
+			var hoveredGallery = $(this),
+				galleryName = hoveredGallery.find('h2');
+			galleryName.animate({
+				opacity: '1',
+				letterSpacing: '4px'
+			}, 400);
+		});
 
-	self.sliderNavigation.on('mouseleave', function() {
-		var hoveredGallery = $(this),
-			galleryName = hoveredGallery.find('h2');
-		galleryName.animate({
-			opacity: '0',
-			letterSpacing: '15px'
-		}, 400);
-	});
+		self.sliderNavigation.on('mouseleave', function() {
+			var hoveredGallery = $(this),
+				galleryName = hoveredGallery.find('h2');
+			galleryName.animate({
+				opacity: '0',
+				letterSpacing: '15px'
+			}, 400);
+		});
+	}
 
 	self.slowAnchor();
 
@@ -73,6 +75,8 @@ makeup.prototype.eventWatch = function() {
 	self.jobSwipe();
 
 	self.headerParallax();
+
+	self.tapEvents();
 };
 
 module.exports = makeup;
