@@ -52,7 +52,7 @@ makeup.prototype.eventWatch = function() {
 					
 				var clickedElem = $(this),
 					clickedElemIndex = self.config.jobDescriptionArrow.index(clickedElem),
-					elemToShow = self.config.jobDescription.eq(clickedElemIndex),
+					elemToShow = self.config.jobDescription.eq(clickedElemIndex - 1),
 					currentElem = $('ul.description li.selected-description');
 
 				if ( !elemToShow.hasClass('selected-description') ) {
@@ -60,12 +60,12 @@ makeup.prototype.eventWatch = function() {
 					currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
 					setTimeout(function() {
 						self.config.jobDescription.not(elemToShow).removeClass();
-					}, 800);
+					}, 200);
 				} else {
 					currentElem.removeClass('bounceInUp').addClass('bounceOutDown');
 					setTimeout(function() {
 						currentElem.removeClass();
-					}, 800);
+					}, 400);
 				}
 		});
 	}
