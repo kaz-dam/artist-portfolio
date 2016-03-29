@@ -48,7 +48,8 @@ makeup.prototype.jobSwipe = function() {
 			}, 500);
 		},
 
-		treshold: 0
+		treshold: 0,
+		allowPageScroll: 'vertical'
 	});
 
 	$('div.borders div.icon-wrapper .arrow').first().swipe({
