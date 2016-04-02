@@ -19,7 +19,7 @@ makeup.prototype.tapEvents = function() {
 			},
 
 			treshold: 50,
-			allowPageScroll: 'auto'
+			preventDefaultEvents: false
 		});
 
 		$('div.menu div.small-width').swipe({
@@ -54,6 +54,16 @@ makeup.prototype.tapEvents = function() {
 					self.config.menuDiv.css('background-color', 'rgba(0,0,0,1)');
 					menuItems.addClass('show-menu flipInX').css('background-color', 'rgba(0,0,0,1)');
 				}
+			}
+		});
+
+		$('li.gallery div.back-mobile').swipe({
+			tap: function(event, target) {
+				console.log(event);
+				var	selectedSlide = self.slider.children('li').eq(0),
+					visibleSlide = self.retrieveVisibleSlide(self.slider),
+					direction = 'home';
+				self.updateSlide(visibleSlide, selectedSlide, direction, self.svgCoverLayer, self.pathArray, self.svgPath);
 			}
 		});
 	}

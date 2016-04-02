@@ -40,7 +40,7 @@ makeup.prototype.pictureSlider = function() {
 	self.config.imgForward.on('click', function() {
 		var topImg = $('#tmpl-wrapper ul.gallery-images li').filter('.visible-image'),
 			topImgIndex = topImg.index(),
-			allImgs = $('#tmpl-wrapper ul.gallery-images li').length
+			allImgs = $('#tmpl-wrapper ul.gallery-images li').length,
 			desc = $('#tmpl-wrapper div.picture-description');
 
 		if ( topImgIndex < allImgs - 1 ) {

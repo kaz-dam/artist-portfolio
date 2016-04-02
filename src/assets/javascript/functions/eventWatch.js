@@ -47,7 +47,7 @@ makeup.prototype.eventWatch = function() {
 
 	self.slowAnchor();
 
-	if (self.config.windowObj.width() > 1040) {
+	if (self.config.windowObj.width() > 710) {
 		self.config.jobDescriptionArrow.on('click', function() {
 					
 				var clickedElem = $(this),
@@ -77,6 +77,8 @@ makeup.prototype.eventWatch = function() {
 	self.headerParallax();
 
 	self.tapEvents();
+
+	self.imageSwipe();
 };
 
 module.exports = makeup;

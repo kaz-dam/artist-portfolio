@@ -10,7 +10,7 @@ makeup.prototype.renderGallery = function( arg ) {
 			self.selectedPictures.push(self.pictures[i]);
 		}
 	}
-
+	
 	var renderedPics = gallery.gallery({pics: self.selectedPictures});
 	$('#tmpl-wrapper').html(renderedPics);
 

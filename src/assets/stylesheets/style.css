@@ -1603,8 +1603,9 @@ li.gallery div.nav-dots span {
 li.gallery div.nav-dots span.top-image {
   background-color: white; }
 
-li.gallery div.nav-dots:hover span {
-  opacity: 1; }
+@media screen and (min-width: 1040px) {
+  li.gallery div.nav-dots:hover span {
+    opacity: 1; } }
 
 /* --- animations --- */
 .go-back {
@@ -1826,3 +1827,77 @@ li.gallery div.nav-dots:hover span {
     opacity: 0;
     -webkit-transform: translate3d(2000px, 0, 0);
             transform: translate3d(2000px, 0, 0); } }
+
+@media screen and (max-width: 1040px) {
+  div.back-button,
+  li.gallery div.gallery-nav-hover-back,
+  li.gallery div.gallery-nav-hover-forward {
+    display: none; }
+  #tmpl-wrapper ul.gallery-images {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  #tmpl-wrapper ul.gallery-images li {
+    height: auto;
+    width: auto;
+    box-shadow: none;
+    border: none;
+    margin: 0 auto; }
+  #tmpl-wrapper ul.gallery-images li img {
+    width: 85%;
+    display: block;
+    border: 2px solid white;
+    margin: 0 auto; }
+  li.gallery div.nav-dots {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+  li.gallery div.nav-dots span {
+    margin: 0; }
+  #tmpl-wrapper div.picture-description {
+    left: 90px;
+    top: 40px; }
+  #tmpl-wrapper div.picture-description p {
+    font-size: 7px;
+    letter-spacing: 4px; }
+  li.gallery div.back-mobile {
+    position: fixed;
+    top: 0;
+    right: 15px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10; }
+  li.gallery div.back-mobile span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 9px 0; }
+  li.gallery div.back-mobile span:first-child {
+    -webkit-transform: rotateZ(-45deg) translate(-8px, 10px);
+            transform: rotateZ(-45deg) translate(-8px, 10px); }
+  li.gallery div.back-mobile span:last-child {
+    -webkit-transform: rotateZ(45deg) translate(0px, -2px);
+            transform: rotateZ(45deg) translate(0px, -2px); } }
+
+@media screen and (max-width: 710px) {
+  li.gallery div.nav-dots {
+    bottom: 0px; }
+  li.gallery div.nav-dots span {
+    width: 12px;
+    height: 12px; }
+  #tmpl-wrapper ul.gallery-images li img {
+    width: 94%; }
+  #tmpl-wrapper div.picture-description {
+    left: 20px;
+    top: 0px;
+    box-shadow: none; }
+  #tmpl-wrapper div.picture-description p {
+    font-size: 5px;
+    letter-spacing: 2px;
+    margin: 5px 5px; } }

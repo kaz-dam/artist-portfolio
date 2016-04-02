@@ -209,8 +209,10 @@ li.gallery div.nav-dots span.top-image {
   // opacity: 0.5;
 }
 
-li.gallery div.nav-dots:hover span {
-  opacity: 1;
+@media screen and (min-width: 1040px) {
+  li.gallery div.nav-dots:hover span {
+    opacity: 1;
+  }
 }
 
 /* --- animations --- */

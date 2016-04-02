@@ -54,7 +54,7 @@ makeup.prototype.jobSwipe = function() {
 			},
 
 			treshold: 0,
-			allowPageScroll: 'vertical'
+			preventDefaultEvents: false
 		});
 
 		$('div.borders div.icon-wrapper .arrow').first().swipe({

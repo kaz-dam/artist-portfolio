@@ -19,5 +19,6 @@ var navDot = require('./functions/navDot');
 var helpers = require('./templates/helpers');
 var jobSwipe = require('./functions/jobSwipe');
 var tapEvents = require('./functions/tapEvents');
+var imageSwipe = require('./functions/imageSwipe');
 
 var makeup = new Makeup();
